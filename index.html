@@ -1,107 +1,151 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Selamat Idul Fitri 1447 H</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Selamat Idul Fitri 1447 H</title>
 
-    body {
-      height: 100vh;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
-    .container {
-      text-align: center;
-      padding: 40px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(15px);
-      box-shadow: 0 0 40px rgba(0,0,0,0.4);
-      max-width: 600px;
-      animation: fadeIn 2s ease;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8em;
-      margin-bottom: 20px;
-      color: #ffd700;
-    }
+body {
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #0b1a20, #02090c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: white;
+}
 
-    p {
-      font-size: 1.2em;
-      line-height: 1.6;
-      margin-bottom: 25px;
-    }
+/* GLOW BACKGROUND */
+body::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,215,0,0.15), transparent 70%);
+  animation: pulse 6s infinite ease-in-out;
+}
 
-    .signature {
-      margin-top: 20px;
-      font-style: italic;
-      font-size: 1.1em;
-      color: #ddd;
-    }
+@keyframes pulse {
+  0%,100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(1.2); opacity: 0.8; }
+}
 
-    .image {
-      margin-bottom: 25px;
-    }
+/* ARCH ISLAMI */
+.arch {
+  position: relative;
+  width: 420px;
+  padding: 50px 30px;
+  text-align: center;
+  border-radius: 200px 200px 20px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,215,0,0.2);
+  box-shadow: 0 0 40px rgba(255,215,0,0.15);
+  backdrop-filter: blur(10px);
+  animation: fadeUp 2s ease;
+}
 
-    .image img {
-      width: 180px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-      animation: float 4s ease-in-out infinite;
-    }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+/* BULAN SABIT */
+.moon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: -20px 0 0 0 gold;
+  margin: 0 auto 20px;
+  animation: float 4s ease-in-out infinite;
+}
 
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-    }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
 
-    .glow {
-      text-shadow: 0 0 10px rgba(255, 215, 0, 0.7),
-                   0 0 20px rgba(255, 215, 0, 0.5);
-    }
-  </style>
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  color: gold;
+  text-shadow: 0 0 20px rgba(255,215,0,0.6);
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.signature {
+  margin-top: 20px;
+  font-style: italic;
+  color: #aaa;
+}
+
+/* PARTIKEL HALUS */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: gold;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: rise 8s infinite linear;
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0.8;
+  }
+}
+</style>
 </head>
+
 <body>
-  <div class="container">
-    
-    <div class="image">
-      <img src="https://images.unsplash.com/photo-1608889175123-8ee362201f03?auto=format&fit=crop&w=400&q=80" alt="Ketupat Lebaran">
-    </div>
 
-    <h1 class="glow">Selamat Idul Fitri 1447 H</h1>
+<!-- PARTIKEL -->
+<div class="particle" style="left:10%; animation-delay:0s;"></div>
+<div class="particle" style="left:30%; animation-delay:2s;"></div>
+<div class="particle" style="left:50%; animation-delay:4s;"></div>
+<div class="particle" style="left:70%; animation-delay:1s;"></div>
+<div class="particle" style="left:85%; animation-delay:3s;"></div>
 
-    <p>
-      Taqabbalallahu minna wa minkum,<br>
-      mohon maaf lahir dan batin.<br><br>
-      Semoga hati kembali bersih,<br>
-      langkah kembali lurus,<br>
-      dan hidup semakin dekat dengan Sang Pencipta.
-    </p>
+<div class="arch">
 
-    <div class="signature">
-      — Dari Yanto Goutama —
-    </div>
+  <div class="moon"></div>
 
+  <h1>Selamat Idul Fitri 1447 H</h1>
+
+  <p>
+    Taqabbalallahu minna wa minkum,<br>
+    mohon maaf lahir dan batin.<br><br>
+    Semoga hati kembali jernih,<br>
+    langkah kembali lurus,<br>
+    dan hidup diliputi cahaya keberkahan.
+  </p>
+
+  <div class="signature">
+    — Dari Yanto Goutama —
   </div>
+
+</div>
+
 </body>
 </html>
