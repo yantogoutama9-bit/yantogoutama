@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Hari Raya Nyepi Çaka 1948 - Yanto Goutama</title>
+    <title>Selamat Idul Fitri 1447 H - Yanto Goutama</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(180deg, #0c1445 0%, #1a237e 30%, #283593 60%, #1a237e 100%);
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
             min-height: 100vh;
             overflow-x: hidden;
+        }
+
+        .arabic-font {
+            font-family: 'Amiri', serif;
         }
 
         .serif-font {
             font-family: 'Cormorant Garamond', serif;
         }
 
-        .stars {
+        /* Lantern Animation */
+        .lanterns {
             position: fixed;
             top: 0;
             left: 0;
@@ -26,195 +31,338 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
+            overflow: hidden;
         }
 
-        .star {
+        .lantern {
             position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
+            width: 40px;
+            height: 50px;
+            background: radial-gradient(circle, rgba(255,215,0,0.4) 0%, transparent 70%);
             border-radius: 50%;
-            animation: twinkle 4s infinite;
+            animation: float-lantern 15s infinite ease-in-out;
         }
 
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; }
-            50% { opacity: 1; }
-        }
-
-        .shooting-star {
+        .lantern::before {
+            content: '';
             position: absolute;
-            width: 100px;
-            height: 2px;
-            background: linear-gradient(90deg, white, transparent);
-            animation: shoot 3s linear infinite;
-            opacity: 0;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 15px;
+            background: rgba(255,215,0,0.3);
         }
 
-        @keyframes shoot {
-            0% { transform: translateX(-100px) translateY(100px); opacity: 1; }
-            100% { transform: translateX(300px) translateY(-100px); opacity: 0; }
+        @keyframes float-lantern {
+            0%, 100% { 
+                transform: translateY(100vh) translateX(0) scale(1); 
+                opacity: 0; 
+            }
+            10% { opacity: 1; }
+            90% { opacity: 0.8; }
+            100% { 
+                transform: translateY(-100px) translateX(30px) scale(0.6); 
+                opacity: 0; 
+            }
         }
 
+        /* Glass Card Luxury */
         .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 215, 0, 0.15);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
-                        inset 0 0 20px rgba(255, 215, 0, 0.05);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(25px);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.6),
+                inset 0 0 30px rgba(212, 175, 55, 0.08),
+                0 0 100px rgba(212, 175, 55, 0.1);
         }
 
+        /* Gold Gradients */
         .text-gold {
-            color: #FFD700;
-            text-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            color: #D4AF37;
+            text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
         }
 
-        .text-gold-soft {
-            color: #DAA520;
-        }
-
-        .border-gold {
-            border-color: rgba(255, 215, 0, 0.3);
-        }
-
-        .om-glow {
-            animation: breathe 6s ease-in-out infinite;
-            text-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
-        }
-
-        @keyframes breathe {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-        }
-
-        .float-slow {
-            animation: float 8s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+        .text-gold-light {
+            color: #F4E8C1;
         }
 
         .gradient-gold {
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%);
+            background: linear-gradient(135deg, #D4AF37 0%, #F4E8C1 30%, #FFD700 60%, #D4AF37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            background-size: 200% auto;
+            animation: shine 5s linear infinite;
         }
 
-        .btn-share {
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.4);
-            transition: all 0.3s ease;
+        @keyframes shine {
+            to { background-position: 200% center; }
         }
 
-        .btn-share:hover {
-            background: rgba(255, 215, 0, 0.2);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        /* Moon Glow */
+        .moon {
+            width: 100px;
+            height: 100px;
+            background: radial-gradient(circle at 30% 30%, #F4E8C1, #D4AF37);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 60px rgba(212, 175, 55, 0.6),
+                0 0 100px rgba(212, 175, 55, 0.3),
+                inset -10px -10px 20px rgba(0,0,0,0.2);
+            animation: moon-pulse 4s ease-in-out infinite;
+            position: relative;
+        }
+
+        .moon::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 25%;
+            width: 15px;
+            height: 15px;
+            background: rgba(0,0,0,0.1);
+            border-radius: 50%;
+            box-shadow: 
+                20px 10px 0 -2px rgba(0,0,0,0.1),
+                -10px 25px 0 -5px rgba(0,0,0,0.05);
+        }
+
+        @keyframes moon-pulse {
+            0%, 100% { 
+                box-shadow: 0 0 60px rgba(212, 175, 55, 0.6), 0 0 100px rgba(212, 175, 55, 0.3);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 80px rgba(212, 175, 55, 0.8), 0 0 120px rgba(212, 175, 55, 0.4);
+                transform: scale(1.03);
+            }
+        }
+
+        /* Ornamental Borders */
+        .ornament-top {
+            position: relative;
+            padding-top: 2rem;
+        }
+
+        .ornament-top::before {
+            content: '❋';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(212, 175, 55, 0.6);
+            font-size: 1.5rem;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: translateX(-50%) rotate(0deg); }
+            to { transform: translateX(-50%) rotate(360deg); }
+        }
+
+        /* Ketupat Pattern */
+        .ketupat {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid rgba(212, 175, 55, 0.4);
+            position: relative;
+            margin: 0 8px;
+        }
+
+        .ketupat::after {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 25px;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-top: 25px solid rgba(212, 175, 55, 0.4);
+        }
+
+        /* Button Luxury */
+        .btn-luxury {
+            background: linear-gradient(135deg, rgba(212,175,55,0.15) 0%, rgba(212,175,55,0.05) 100%);
+            border: 1px solid rgba(212,175,55,0.4);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-luxury::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-luxury:hover::before {
+            left: 100%;
+        }
+
+        .btn-luxury:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212,175,55,0.3);
+            border-color: rgba(212,175,55,0.8);
+        }
+
+        /* Floating Animation */
+        .float-elegant {
+            animation: float-elegant 6s ease-in-out infinite;
+        }
+
+        @keyframes float-elegant {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(0.5deg); }
+        }
+
+        /* Sparkle Effect */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #D4AF37;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
         }
     </style>
 </head>
 <body class="text-white flex items-center justify-center p-4">
 
-    <div class="stars" id="starfield"></div>
+    <!-- Floating Lanterns -->
+    <div class="lanterns" id="lanternContainer"></div>
 
-    <div class="glass-card rounded-3xl p-8 md:p-16 max-w-2xl w-full text-center relative z-10 float-slow">
+    <!-- Main Card -->
+    <div class="glass-card rounded-[2rem] p-10 md:p-16 max-w-3xl w-full text-center relative z-10 float-elegant">
         
-        <div class="flex justify-center items-center gap-4 mb-8">
-            <div class="h-px w-16 bg-gradient-to-r from-transparent to-yellow-500/50"></div>
-            <span class="text-3xl om-glow">ॐ</span>
-            <div class="h-px w-16 bg-gradient-to-l from-transparent to-yellow-500/50"></div>
+        <!-- Sparkles -->
+        <div class="sparkle" style="top: 10%; left: 10%; animation-delay: 0s;"></div>
+        <div class="sparkle" style="top: 20%; right: 15%; animation-delay: 1s;"></div>
+        <div class="sparkle" style="bottom: 30%; left: 20%; animation-delay: 0.5s;"></div>
+        <div class="sparkle" style="bottom: 20%; right: 10%; animation-delay: 1.5s;"></div>
+
+        <!-- Moon -->
+        <div class="moon mx-auto mb-8"></div>
+
+        <!-- Arabic Greeting -->
+        <div class="ornament-top mb-6">
+            <h1 class="arabic-font text-5xl md:text-7xl font-bold gradient-gold mb-2 leading-tight">
+                عيد مبارك
+            </h1>
+            <p class="arabic-font text-2xl md:text-3xl text-gold-light/80 mb-4">
+                تقبل الله منا ومنكم
+            </p>
         </div>
 
-        <p class="serif-font text-xl md:text-2xl text-gold-soft mb-2 tracking-widest uppercase">Rahajeng Rahina Nyepi</p>
-        
-        <h1 class="serif-font text-4xl md:text-6xl font-semibold gradient-gold mb-4 leading-tight">
-            Selamat Hari Raya Nyepi
-        </h1>
-        
-        <div class="inline-block px-4 py-1 rounded-full border border-gold bg-yellow-500/10 mb-8">
-            <span class="text-gold text-sm tracking-wider font-medium">TAHUN BARU ÇAKA 1948</span>
+        <!-- Indonesian Greeting -->
+        <div class="mb-8">
+            <p class="serif-font text-lg md:text-xl text-gold/70 tracking-[0.2em] uppercase mb-3">Selamat Hari Raya Idul Fitri</p>
+            <h2 class="serif-font text-4xl md:text-6xl font-semibold gradient-gold mb-4">
+                1447 Hijriah
+            </h2>
+            
+            <div class="flex justify-center items-center gap-4 my-6">
+                <div class="ketupat"></div>
+                <div class="h-px w-20 bg-gradient-to-r from-transparent via-yellow-600/50 to-transparent"></div>
+                <span class="text-gold text-2xl">☪</span>
+                <div class="h-px w-20 bg-gradient-to-l from-transparent via-yellow-600/50 to-transparent"></div>
+                <div class="ketupat"></div>
+            </div>
         </div>
 
-        <div class="space-y-6 mb-10">
+        <!-- Main Message -->
+        <div class="space-y-6 mb-10 max-w-2xl mx-auto">
             <p class="serif-font text-xl md:text-2xl text-white/90 leading-relaxed italic">
-                "Di hari suci ini, marilah kita merenungkan diri dalam keheningan, mensucikan hati dan pikiran, serta memohon kesucian kepada Ida Sang Hyang Widhi Wasa."
+                "Minal aidin wal faizin, mohon maaf lahir dan batin atas segala khilaf dan kesalahan. Semoga Allah menerima amal ibadah kita dan meridhai setiap langkah kebaikan kita."
             </p>
             
-            <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent mx-auto"></div>
+            <div class="w-32 h-px bg-gradient-to-r from-transparent via-yellow-500/50 to-transparent mx-auto"></div>
             
             <p class="text-white/70 text-lg leading-relaxed">
-                Semoga keheningan Nyepi membawa kedamaian batin, kejernihan pikiran, dan berkah spiritual bagi kita semua.
+                Taqabbalallahu minna wa minkum, shiyamana wa shiyamakum. Semoga kita diberikan kemenangan sejati dan keberkahan yang melimpah di hari yang fitri ini.
             </p>
         </div>
 
-        <div class="grid grid-cols-3 gap-4 mb-10 text-sm">
-            <div class="p-3 rounded-lg bg-white/5 border border-white/10">
-                <span class="text-2xl mb-1 block">🧘</span>
-                <p class="text-gold-soft">Tri Hita Karana</p>
+        <!-- Decorative Elements -->
+        <div class="grid grid-cols-3 gap-6 mb-10 max-w-lg mx-auto">
+            <div class="text-center">
+                <div class="w-16 h-16 mx-auto mb-2 rounded-full bg-gradient-to-br from-yellow-600/20 to-transparent border border-yellow-600/30 flex items-center justify-center">
+                    <span class="text-2xl">🕌</span>
+                </div>
+                <p class="text-gold-soft text-sm">Takbir</p>
             </div>
-            <div class="p-3 rounded-lg bg-white/5 border border-white/10">
-                <span class="text-2xl mb-1 block">🕯️</span>
-                <p class="text-gold-soft">Catur Brata</p>
+            <div class="text-center">
+                <div class="w-16 h-16 mx-auto mb-2 rounded-full bg-gradient-to-br from-yellow-600/20 to-transparent border border-yellow-600/30 flex items-center justify-center">
+                    <span class="text-2xl">🤝</span>
+                </div>
+                <p class="text-gold-soft text-sm">Silaturahmi</p>
             </div>
-            <div class="p-3 rounded-lg bg-white/5 border border-white/10">
-                <span class="text-2xl mb-1 block">🌺</span>
-                <p class="text-gold-soft">Dharma Shanti</p>
+            <div class="text-center">
+                <div class="w-16 h-16 mx-auto mb-2 rounded-full bg-gradient-to-br from-yellow-600/20 to-transparent border border-yellow-600/30 flex items-center justify-center">
+                    <span class="text-2xl">🥮</span>
+                </div>
+                <p class="text-gold-soft text-sm">Berkah</p>
             </div>
         </div>
 
-        <div class="border-t border-gold/20 pt-8">
-            <p class="text-white/50 text-sm mb-2">Dengan hormat dan kebijaksanaan,</p>
-            <p class="serif-font text-3xl text-gold font-medium italic">Yanto Goutama</p>
-            <p class="text-gold-soft/60 text-sm mt-1">Om Shanti Shanti Shanti Om</p>
+        <!-- Sender -->
+        <div class="border-t border-yellow-600/20 pt-8 mt-8">
+            <p class="text-white/40 text-sm mb-2 tracking-wider uppercase">Dengan hormat dan tulus hati,</p>
+            <p class="serif-font text-4xl text-gold font-medium italic mb-2">Yanto Goutama</p>
+            <p class="text-gold-light/50 text-sm">Semoga Allah SWT senantiasa merahmati</p>
         </div>
 
-        <button onclick="shareUcapan()" class="btn-share mt-8 px-8 py-3 rounded-full text-gold text-sm font-medium">
+        <!-- Share Button -->
+        <button onclick="shareUcapan()" class="btn-luxury mt-10 px-10 py-4 rounded-full text-gold text-sm font-medium tracking-wider uppercase">
             Bagikan Ucapan Ini ✨
         </button>
     </div>
 
     <script>
-        function createStars() {
-            const container = document.getElementById('starfield');
-            
-            for (let i = 0; i < 150; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 4 + 's';
-                star.style.animationDuration = (3 + Math.random() * 3) + 's';
-                container.appendChild(star);
+        // Create floating lanterns
+        function createLanterns() {
+            const container = document.getElementById('lanternContainer');
+            for (let i = 0; i < 12; i++) {
+                const lantern = document.createElement('div');
+                lantern.className = 'lantern';
+                lantern.style.left = Math.random() * 100 + '%';
+                lantern.style.animationDelay = Math.random() * 15 + 's';
+                lantern.style.animationDuration = (12 + Math.random() * 8) + 's';
+                lantern.style.opacity = 0.6 + Math.random() * 0.4;
+                container.appendChild(lantern);
             }
-            
-            setInterval(() => {
-                const shootingStar = document.createElement('div');
-                shootingStar.className = 'shooting-star';
-                shootingStar.style.top = Math.random() * 50 + '%';
-                shootingStar.style.left = Math.random() * 50 + '%';
-                container.appendChild(shootingStar);
-                setTimeout(() => shootingStar.remove(), 3000);
-            }, 4000);
         }
 
         function shareUcapan() {
-            const text = `Selamat Hari Raya Nyepi Tahun Baru Çaka 1948
+            const text = `Selamat Hari Raya Idul Fitri 1447 H
 
-"Di hari suci ini, marilah kita merenungkan diri dalam keheningan, mensucikan hati dan pikiran."
+"Minal aidin wal faizin, mohon maaf lahir dan batin atas segala khilaf dan kesalahan."
 
-Semoga keheningan Nyepi membawa kedamaian batin dan berkah spiritual.
+Taqabbalallahu minna wa minkum. Semoga Allah menerima amal ibadah kita dan memberikan kemenangan sejati di hari yang fitri ini.
 
 Dengan hormat,
 Yanto Goutama
 
-Rahajeng Rahina Nyepi! 🙏 Om Shanti Shanti Shanti Om`;
+عيد مبارك! 🌙✨`;
             
             if (navigator.share) {
                 navigator.share({
-                    title: 'Selamat Hari Raya Nyepi Çaka 1948',
+                    title: 'Selamat Idul Fitri 1447 H',
                     text: text
                 });
             } else {
@@ -223,11 +371,13 @@ Rahajeng Rahina Nyepi! 🙏 Om Shanti Shanti Shanti Om`;
             }
         }
 
-        createStars();
+        // Initialize
+        createLanterns();
 
+        // Parallax effect
         document.addEventListener('mousemove', (e) => {
-            const moveX = (e.clientX / window.innerWidth - 0.5) * 15;
-            const moveY = (e.clientY / window.innerHeight - 0.5) * 15;
+            const moveX = (e.clientX / window.innerWidth - 0.5) * 20;
+            const moveY = (e.clientY / window.innerHeight - 0.5) * 20;
             document.querySelector('.glass-card').style.transform = 
                 `translate(${moveX}px, ${moveY}px)`;
         });
